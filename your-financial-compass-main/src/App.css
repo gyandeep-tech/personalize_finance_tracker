@@ -1,0 +1,84 @@
+#root {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  #root {
+    padding: 2rem;
+  }
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Responsive layout utilities */
+@media (max-width: 767px) {
+  .responsive-grid,
+  .responsive-grid-3 {
+    @apply grid-cols-1;
+  }
+
+  .glass-card {
+    @apply p-5;
+  }
+
+  .metric-number {
+    @apply text-[clamp(28px,_5vw,_36px)];
+  }
+}
+
+/* Stat pill styling */
+.stat-pill-up {
+  @apply inline-flex items-center gap-1 rounded-full bg-green-100 px-2.5 py-1 text-xs font-semibold text-green-700;
+}
+
+.stat-pill-down {
+  @apply inline-flex items-center gap-1 rounded-full bg-red-100 px-2.5 py-1 text-xs font-semibold text-red-700;
+}
+
+/* Navigation icon styling */
+.nav-icon {
+  @apply flex h-10 w-10 items-center justify-center rounded-lg transition-all duration-200;
+  @apply text-muted-foreground hover:text-foreground hover:bg-secondary/60;
+}
+
+.nav-icon-active {
+  @apply bg-primary text-primary-foreground;
+}
+
+/* Gradient utilities */
+.gradient-primary {
+  @apply bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent;
+}
+

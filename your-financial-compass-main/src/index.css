@@ -1,0 +1,242 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Surfaces */
+    --background: 45 35% 96%; /* Warm paper color */
+    --foreground: 220 10% 12%; /* Very dark slate */
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 10% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 10% 12%;
+
+    /* Brand */
+    --primary: 222 47% 11%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 45 20% 92%;
+    --secondary-foreground: 220 10% 12%;
+
+    --muted: 45 20% 90%;
+    --muted-foreground: 220 5% 45%;
+
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --success: 152 76% 40%;
+    --warning: 32 96% 46%;
+    --danger: 0 84% 52%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 222 47% 11%;
+
+    --radius: 0.5rem;
+
+    /* Shadows */
+    --shadow-elevated: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+
+    --transition-smooth: all 0.2s ease-in-out;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 40%;
+    --sidebar-primary: 222 47% 11%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 9%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 222 47% 11%;
+  }
+
+  .dark {
+    /* Keeping dark mode mapped to minimal dark slates if needed, 
+       but primarily focusing on the light editorial theme */
+    --background: 222 47% 6%;
+    --foreground: 0 0% 98%;
+    --card: 222 40% 9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 222 45% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 222 30% 14%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 222 25% 13%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 256 90% 68%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 30% 16%;
+    --input: 222 30% 16%;
+    --ring: 0 0% 98%;
+    --sidebar-background: 222 50% 7%;
+    --sidebar-foreground: 215 20% 65%;
+    --sidebar-border: 222 30% 14%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html, body, #root { @apply min-h-screen; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  /* Responsive Typography */
+  h1 {
+    @apply text-4xl md:text-5xl font-bold;
+    line-height: 1.2;
+  }
+
+  h2 {
+    @apply text-[clamp(28px,_5vw,_36px)] font-bold;
+    line-height: 1.3;
+  }
+
+  h3 {
+    @apply text-[clamp(20px,_4vw,_28px)] font-semibold;
+    line-height: 1.4;
+  }
+
+  p, body {
+    @apply text-[clamp(16px,_2vw,_18px)];
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+  /* Large, Spacious Card Base */
+  .glass-card {
+    @apply bg-card border border-border rounded-[16px] shadow-soft;
+    @apply p-8 md:p-8 sm:p-6 min-h-[160px];
+  }
+
+  /* Responsive grid layouts */
+  .responsive-grid {
+    @apply grid gap-7 md:gap-7 sm:gap-6 grid-cols-1 md:grid-cols-2;
+  }
+
+  .responsive-grid-3 {
+    @apply grid gap-7 md:gap-7 sm:gap-6 grid-cols-1 md:grid-cols-3;
+  }
+
+  .full-width-card {
+    @apply md:col-span-2;
+  }
+
+  /* Metric Number Styles */
+  .metric-number {
+    @apply font-display font-bold tracking-tight;
+    @apply text-[clamp(36px,_6vw,_40px)];
+    line-height: 1.2;
+  }
+
+  .metric-label {
+    @apply text-[clamp(12px,_1.5vw,_13px)] font-semibold uppercase tracking-wider;
+    @apply text-muted-foreground;
+    letter-spacing: 0.05em;
+  }
+
+  .card-title {
+    @apply font-display font-bold;
+    @apply text-[clamp(22px,_4vw,_28px)];
+    line-height: 1.3;
+  }
+
+  .section-heading {
+    @apply font-display font-bold;
+    @apply text-[clamp(20px,_3.5vw,_28px)];
+    line-height: 1.4;
+  }
+
+  .body-text {
+    @apply text-[clamp(14px,_1.5vw,_16px)];
+    line-height: 1.6;
+  }
+
+  /* Spacing utilities */
+  .gap-card {
+    @apply gap-4 md:gap-5;
+  }
+
+  /* Gradient and glow utilities */
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent;
+  }
+
+  .glow-card {
+    @apply bg-card border border-border rounded-[16px] shadow-soft;
+  }
+
+  /* Navigation icon styling */
+  .nav-icon {
+    @apply flex h-10 w-10 items-center justify-center rounded-lg transition-all duration-200;
+    @apply text-muted-foreground hover:text-foreground hover:bg-secondary/60;
+  }
+
+  .nav-icon-active {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  /* Stat pill styling */
+  .stat-pill-up {
+    @apply inline-flex items-center gap-1 rounded-full bg-green-100 px-2.5 py-1 text-xs font-semibold text-green-700;
+  }
+
+  .stat-pill-down {
+    @apply inline-flex items-center gap-1 rounded-full bg-red-100 px-2.5 py-1 text-xs font-semibold text-red-700;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  
+  .scrollbar-thin::-webkit-scrollbar { 
+    width: 6px; 
+    height: 6px; 
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb { 
+    background: hsl(var(--border)); 
+    border-radius: 3px; 
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover { 
+    background: hsl(var(--muted-foreground)); 
+  }
+
+  /* Chatbot styles */
+  .res-card { @apply bg-secondary/40 border border-border rounded-xl p-4 mt-3 font-mono text-sm; }
+  .res-card-title { @apply text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 border-b border-border/50 pb-2 font-sans; }
+  .res-row { @apply flex justify-between items-center py-1.5 text-sm; border-bottom: 1px solid hsl(var(--border) / 0.5); }
+  .res-row:last-child { border-bottom: none; }
+  .res-key { @apply text-muted-foreground; }
+  .res-val { @apply font-semibold; }
+  .res-val.good { @apply text-green-600 dark:text-green-500; }
+  .res-val.bad { @apply text-red-600 dark:text-red-500; }
+  .res-val.neutral { @apply text-orange-600 dark:text-orange-500; }
+  
+  .prog-wrap { @apply mt-4 mb-2; }
+  .prog-label { @apply flex justify-between text-xs text-muted-foreground font-mono mb-1.5; }
+  .prog-track { @apply h-1.5 bg-secondary rounded-full overflow-hidden shadow-inner; }
+  .prog-fill { @apply h-full rounded-full transition-all duration-700 ease-out; }
+  
+  .val { @apply font-bold text-primary; }
+  .warn { @apply text-red-600 text-sm font-medium; }
+  .ok { @apply text-green-600 text-sm font-medium; }
+  .note { @apply text-orange-600 text-sm font-medium; }
+}

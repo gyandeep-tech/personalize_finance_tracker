@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 💰 Personalized Financial Advisory System Using AI
 
 ## 📌 Overview
@@ -152,3 +153,6 @@ Steps:
 If you like this project, give it a ⭐ on GitHub!
 # Personalized-Financial-Advisory-System-
 Hello shubh
+=======
+# personalize_finance_tracker
+>>>>>>> cb5ed47c820d46d4b25042f4deced05b8880791c

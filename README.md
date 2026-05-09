@@ -144,7 +144,7 @@ Steps:
 
 ## 👨‍💻 Author
 
-* Shubh Sahu
+* Gyandeep Talukder 
 
 ---
 
@@ -152,7 +152,7 @@ Steps:
 
 If you like this project, give it a ⭐ on GitHub!
 # Personalized-Financial-Advisory-System-
-Hello shubh
+Hello Gyandeep 
 =======
 # personalize_finance_tracker
 >>>>>>> cb5ed47c820d46d4b25042f4deced05b8880791c
